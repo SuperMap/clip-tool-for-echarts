@@ -1,0 +1,9 @@
+{
+  "url": "./testData/beijingroads.json",
+  "exportFileCount": 20,
+  "options": {
+    "isCompress": true,
+    "datasetNames": "",
+    "isAverageStorage": true
+  }
+}

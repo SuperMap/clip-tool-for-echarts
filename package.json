@@ -1,0 +1,15 @@
+{
+  "name": "clip-tool-for-echarts",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "node ./index.js",
+    "start-log": "node ./index.js --log"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
