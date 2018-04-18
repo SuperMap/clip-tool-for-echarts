@@ -12,7 +12,7 @@ const querystring = require('querystring');
  *           datasetNames - {string} 请求数据时，请求数据集对象名，如： 'osm:roads'。当 url 为数据地址时，必填。<br>
  *           isAverageStorage - {boolean} 是否需要将数据平均存储到每个文件。默认false。
  */
-const bigDataClipToolForECharts = {
+const clipToolForECharts = {
 
     datasetArray: [],
 
@@ -36,10 +36,10 @@ const bigDataClipToolForECharts = {
         const reg = /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&:\/~\+#]*[\w\-\@?^=%&\/~\+#])?$/;
         if (reg.test(this.url)) {
             //url 为数据地址则启用请求数据
-            bigDataClipToolForECharts.readDataFromUrl();
+            this.readDataFromUrl();
         } else {
             //url 为文件地址则启用读取数据
-            bigDataClipToolForECharts.readDataFromFile();
+            this.readDataFromFile();
         }
     },
     /**
@@ -253,7 +253,7 @@ const bigDataClipToolForECharts = {
                     fileType = 'json'
                 }
                 for (let num = 0; num < me.exportFileCount; num++) {
-                    fs.createWriteStream(`./resultData/bigData_${num}.${fileType}`);
+                    fs.createWriteStream(`./resultData/data_${num}.${fileType}`);
                     //创建将要存入每个文件夹下的数组：
                     me.datasetArray.push([]);
                 }
@@ -429,13 +429,13 @@ const bigDataClipToolForECharts = {
                     buffer.writeFloatLE(data[y], y * 4);
                 }
 
-                fs.writeFile(`./resultData/bigData_${i}.bin`, buffer, (err) => {
+                fs.writeFile(`./resultData/data_${i}.bin`, buffer, (err) => {
                     if (err) {
                         console.log(err);
                         return;
                     }
                     if (this.isShowLog) {
-                        console.log(`./resultData/bigData_${i}.bin` + "data's writing successfully!");
+                        console.log(`./resultData/data_${i}.bin` + "data's writing successfully!");
                     }
                 })
             }
@@ -445,13 +445,13 @@ const bigDataClipToolForECharts = {
         //将处理好得数据分别存入文件
         for (let i = 0; i < this.exportFileCount; i++) {
 
-            fs.writeFile(`./resultData/bigData_${i}.json`, JSON.stringify(this.datasetArray[i]), (err) => {
+            fs.writeFile(`./resultData/data_${i}.json`, JSON.stringify(this.datasetArray[i]), (err) => {
                 if (err) {
                     console.log(err);
                     return;
                 }
                 if (this.isShowLog) {
-                    console.log(`./resultData/bigData_${i}.json` + "data's writing successfully!")
+                    console.log(`./resultData/data_${i}.json` + "data's writing successfully!")
                 }
 
             })
@@ -467,4 +467,4 @@ const options = process.argv.splice(2);
 if (options && options[0] === '--log') {
     parameters.isShowLog = true;
 }
-bigDataClipToolForECharts.process(parameters);
+clipToolForECharts.process(parameters);
