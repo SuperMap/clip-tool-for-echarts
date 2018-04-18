@@ -8,6 +8,8 @@ Clip Tool for ECharts 是一个基于 node 的大数据切割工具，用于将�
 
 * 第二步：运行 `node` 命令 `$ npm start`
 
+* 第三步：生成`resultData`文件夹，输出数据文件（默认操作）
+
 <h2 id='config'>config.json</h2>
 
 `config.json` 配置文件示例与参数介绍如下：
@@ -32,9 +34,8 @@ Clip Tool for ECharts 是一个基于 node 的大数据切割工具，用于将�
     ｛"features": [{
             "type": "Feature",
             "geometry": {
-               "type": "Point", // 或者为 "LineString"
-               "coordinates": [[-47.8977476573595,-15.792110943058866]
-               ]
+               "type": "Point", // 或者为 "LineString" 和 "MultiLineString"
+               "coordinates": [-47.8977476573595,-15.792110943058866]
             }
        ]
     ｝

@@ -5,13 +5,12 @@ const querystring = require('querystring');
 /**
  * url - {string} 数据文件路径或数据请求地址；当前数据请求地址，仅支持SuperMap iServer 数据服务地址；如：
  *            127.0.0.1:8090/iserver/services/data-osm/rest/data/
- * exportFileCount - {number} 数据导出文件数 //todo 给一个最优得默认值
+ * exportFileCount - {number} 数据导出文件数
  * options - {Object} 可选参数，包括以下：<br>
  *           featuresCount - {number} 需要处理的features 个数, 不得超过给定数据文件或请求地址中所保存features 的最大值，默认为全部处理。<br>
  *           isCompress - {boolean} 是否对数据输出数据压缩为流得形式。默认为 true, 即进行压缩<br>
  *           datasetNames - {string} 请求数据时，请求数据集对象名，如： 'osm:roads'。当 url 为数据地址时，必填。<br>
  *           isAverageStorage - {boolean} 是否需要将数据平均存储到每个文件。默认false。
- *
  */
 const bigDataClipToolForECharts = {
 
@@ -130,7 +129,6 @@ const bigDataClipToolForECharts = {
                 'datasetNames': [me.datasetNames],
                 'getFeatureMode': "SQL",
                 'queryParameter': {'name': me.datasetNamesArray[1], 'attributeFilter': `SmID<=${me.featuresCount}`}
-                // 'queryParameter': {'name': me.datasetNamesArray[1], 'attributeFilter': `SMID = 28888`}
             });
             me._requestDataset(post_data);
         } else {
@@ -265,7 +263,6 @@ const bigDataClipToolForECharts = {
     },
 
     _prepareData: function (prepareData) {
-        //处理数据，当前处理得线要素中点，todo 后续考虑点数据如何存储
         const me = this;
         let features;
         if (prepareData['features']) {
@@ -284,7 +281,7 @@ const bigDataClipToolForECharts = {
 
                 let dataType = me.dataType = features[i].geometry.type;
                 dataType = dataType.toLowerCase();
-                //处理两种数据类型：todo 这样获取判断，还是传入参数dataType判断？哪个效率高点？
+                //处理两种数据类型：
                 if (dataType === 'point') {
                     //数据类型为点则直接随机存入数组
                     let index = Math.floor(Math.random() * me.datasetArray.length);
@@ -465,7 +462,7 @@ const bigDataClipToolForECharts = {
 
 const parameters = require('./config');
 
-var options = process.argv.splice(2);
+const options = process.argv.splice(2);
 
 if (options && options[0] === '--log') {
     parameters.isShowLog = true;
