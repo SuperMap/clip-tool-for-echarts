@@ -84,3 +84,5 @@ Clip Tool for ECharts 是一个基于 node 的大数据切割工具，用于将�
  [![](http://iclient.supermap.io/dev/examples/openlayers/img/ol_echartsLinesMillionsBeijingRoads.png)](http://iclient.supermap.io/examples/openlayers/editor.html#echarts_linesDrawMillionsBeijingRoadsNetwork)
 
 ## 许可
+
+[ Apache License 2.0 ](./LICENSE)
