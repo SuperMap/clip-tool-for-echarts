@@ -424,7 +424,7 @@ const bigDataClipToolForECharts = {
         if (this.isCompress) {
             for (let i = 0; i < this.exportFileCount; i++) {
                 let data = new Float32Array(this.datasetArray[i]);
-                var buffer = new Buffer(data.length * 4);
+                let buffer = new Buffer(data.length * 4);
                 for (let y = 0; y < this.datasetArray[i].length; y++) {
                     buffer.writeFloatLE(data[y], y * 4);
                 }
