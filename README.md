@@ -77,11 +77,9 @@ Clip Tool for ECharts 是一个基于 node 的大数据切割工具，用于将�
 
 * 加载数据效果示例如下：
 
- [![](http://iclient.supermap.io/dev/examples/mapboxgl/img/mb_echartsLinesMillionsWaterSystem.png)](http://iclient.supermap.io/examples/mapboxgl/editor.html#echarts_linesDrawMillionsWaterSystem)
- 
- [![](http://iclient.supermap.io/dev/examples/leaflet/img/l_echartsLinesMillionsRoads.png)](http://iclient.supermap.io/examples/leaflet/editor.html#echarts_linesDrawMillionsRoadsNetwork_50WFeatures)
- 
- [![](http://iclient.supermap.io/dev/examples/openlayers/img/ol_echartsLinesMillionsBeijingRoads.png)](http://iclient.supermap.io/examples/openlayers/editor.html#echarts_linesDrawMillionsBeijingRoadsNetwork)
+ [![](http://iclient.supermap.io/dev/examples/mapboxgl/img/mb_echartsLinesMillionsWaterSystem.png)](http://iclient.supermap.io/dev/examples/mapboxgl/editor.html#echarts_linesDrawMillionsWaterSystem)
+ [![](http://iclient.supermap.io/dev/examples/leaflet/img/l_echartsLinesMillionsRoads.png)](http://iclient.supermap.io/dev/examples/leaflet/editor.html#echarts_linesDrawMillionsRoadsNetwork_50WFeatures)
+ [![](http://iclient.supermap.io/dev/examples/openlayers/img/ol_echartsLinesMillionsBeijingRoads.png)](http://iclient.supermap.io/dev/examples/openlayers/editor.html#echarts_linesDrawMillionsBeijingRoadsNetwork)
 
 ## 许可
 
