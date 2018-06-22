@@ -24,7 +24,7 @@ const clipToolForECharts = {
         this.url = parameters.url;
         this.exportFileCount = parameters.exportFileCount;
         this.featuresCount = (parameters.options && parameters.options.featuresCount) ? parameters.options.featuresCount : null;
-        this.isCompress = (parameters.options && parameters.options.isCompress) ? parameters.options.isCompress : true;
+        this.isCompress =  parameters.options.isCompress ? parameters.options.isCompress : false;
         this.isAverageStorage = (parameters.options && parameters.options.isAverageStorage) ? parameters.options.isAverageStorage : false;
 
         //datasetNames 请求服务时使用
