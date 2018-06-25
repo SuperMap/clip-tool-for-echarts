@@ -33,7 +33,7 @@ const clipToolForECharts = {
         //根据 exportFileCount 创建文件和存储数组
         this._createStorageFile();
 
-        const reg = /^((ht|f)tps?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-\.,@?^=%&:\/~\+#]*[\w\-\@?^=%&\/~\+#])?$/;
+        const reg = /^((https|http)?:\/\/)/;
         if (reg.test(this.url)) {
             //url 为数据地址则启用请求数据
             this.readDataFromUrl();
@@ -404,10 +404,11 @@ const clipToolForECharts = {
                         if (pointTemp.x && pointTemp.y) {
                             me.datasetArray[y].push(pointTemp.x);
                             me.datasetArray[y].push(pointTemp.y);
-                            return;
+                        } else {
+                            me.datasetArray[y].push(pointTemp[0]);
+                            me.datasetArray[y].push(pointTemp[1]);
                         }
-                        me.datasetArray[y].push(pointTemp[0]);
-                        me.datasetArray[y].push(pointTemp[1]);
+
                     }
 
                 }

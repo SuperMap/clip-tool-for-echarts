@@ -6,7 +6,7 @@ Clip Tool for ECharts 是一个基于 node 的大数据切割工具，用于将�
 
 * 第一步：配置 [config.json](#config) 文件
 
-* 第二步：运行 `node` 命令 `$ npm start`
+* 第二步：运行 `node` 命令 `$ npm start`,(运行并输出进度命令：`$ npm start-log`)
 
 * 第三步：生成`resultData`文件夹，输出数据文件（默认操作）
 
